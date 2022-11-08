@@ -38,6 +38,7 @@ namespace TaskManagerForms
                         tasksbox.Items.Add(textBox1.Text);
                         string content = textBox1.Text + Environment.NewLine;
                         File.AppendAllText(filePath, content);
+                        textBox1.Clear();
                     }
                     else
                     {
@@ -50,6 +51,7 @@ namespace TaskManagerForms
                     tasksbox.Items.Add(textBox1.Text);
                     string content = textBox1.Text + Environment.NewLine;
                     File.AppendAllText(filePath, content);
+                    textBox1.Clear();
                 }
             }
         }
@@ -58,12 +60,20 @@ namespace TaskManagerForms
         {
             ListBox.SelectedObjectCollection selectedTask = new ListBox.SelectedObjectCollection(tasksbox);
             selectedTask = tasksbox.SelectedItems;
+
+            string[] inventoryData = File.ReadAllLines(filePath);
+            List<string> inventoryDataList = inventoryData.ToList();
+
+            if (inventoryDataList.Remove(tasksbox.Text))
+            {
+                File.WriteAllLines(filePath, inventoryDataList.ToArray());
+            }
+
             if (tasksbox.SelectedIndex != -1)
             {
                 for (int i = selectedTask.Count - 1; i >= 0; i--)
                 {
                     tasksbox.Items.Remove(selectedTask[i]);
-                    //ADD: REMOVING FROM TXT FILE...
                 }
             }
         }
