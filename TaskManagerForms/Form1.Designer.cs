@@ -69,7 +69,7 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(403, 399);
+            this.textBox1.Location = new System.Drawing.Point(403, 412);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(369, 20);
             this.textBox1.TabIndex = 5;
@@ -77,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(547, 383);
+            this.label1.Location = new System.Drawing.Point(546, 396);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 6;

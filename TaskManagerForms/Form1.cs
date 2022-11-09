@@ -39,6 +39,7 @@ namespace TaskManagerForms
                         string content = textBox1.Text + Environment.NewLine;
                         File.AppendAllText(filePath, content);
                         textBox1.Clear();
+
                     }
                     else
                     {
@@ -52,6 +53,7 @@ namespace TaskManagerForms
                     string content = textBox1.Text + Environment.NewLine;
                     File.AppendAllText(filePath, content);
                     textBox1.Clear();
+
                 }
             }
         }
@@ -77,5 +79,6 @@ namespace TaskManagerForms
                 }
             }
         }
+
     }
 }
